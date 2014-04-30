@@ -1,142 +1,250 @@
+<html>
+<head>
+<title> WSN Project Demo </title>
 <style>
+<meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
+<!-- CSS styles for standard search box -->
+<style type="text/css">
+	#tfheader{
+			}
+	#tfnewsearch{
+		float:left;
+		padding:20px;
+	}
+	.tftextinput{
+		margin: 0;
+		padding: 5px 15px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size:14px;
+		border:1px solid #0076a3; border-right:0px;
+		border-top-left-radius: 5px 5px;
+		border-bottom-left-radius: 5px 5px;
+	}
+	.tfbutton {
+		margin: 0;
+		padding: 5px 15px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size:14px;
+		outline: none;
+		cursor: pointer;
+		text-align: center;
+		text-decoration: none;
+		color: #ffffff;
+		border: solid 1px #0076a3; border-right:0px;
+		background: #0095cd;
+		background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+		background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+		border-top-right-radius: 5px 5px;
+		border-bottom-right-radius: 5px 5px;
+	}
+	.tfbutton:hover {
+		text-decoration: none;
+		background: #007ead;
+		background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+		background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+	}
+	/* Fixes submit button height problem in Firefox */
+	.tfbutton::-moz-focus-inner {
+	  border: 0;
+	}
+	.tfclear{
+		clear:both;
+	}
+
+img.pos_left15
+{
+position:absolute;
+left:30px;
+bottom: 290px; 
+}
+
+img.pos_left16
+{
+position:absolute;
+left:420px;
+bottom: 290px; 
+}
+img.pos_left17
+{
+position:absolute;
+left:830px;
+bottom: 290px; 
+}
+
+img.pos_left18
+{
+position:absolute;
+left:1530px;
+bottom: 190px; 
+}
+img.pos_left19
+{
+position:absolute;
+left:1400px;
+bottom: 490px; 
+}
+img.pos_left20
+{
+position:absolute;
+left:530px;
+bottom: 190px; 
+}
+
 img.pos_left
 {
 position:relative;
-left:150px;
+left:350px;
 }
 img.pos_left1
 {
 position:relative;
-left:400px;
+left:800px;
 }
 img.pos_left8
 {
 position:relative;
-left: -455px;
+left: -125px;
 bottom: -210px;
 }
 
 img.pos_left9
 {
 position:relative;
-left:125px;
+left:325px;
 bottom: -210px;
 }
 
+
+img.pos_left10
+{
+position:relative;
+left:775px;
+bottom: -210px;
+}
+
+
+
+img.pos_left11
+{
+position:relative;
+left:1175px;
+bottom: -210px;
+}
 img.pos_left12
 {
 position:relative;
-left:-805px;
-bottom: -80px;
+left:2600px;
+bottom: 120px;
 }
+
+
+
+img.pos_left13
+{
+position:relative;
+left:2500px;
+bottom: -350px;
+}
+
+
+img.pos_left14
+{
+position:relative;
+left:2700px;
+bottom: -450px;
+}
+
 img.pos_left2
 {
 position:relative;
-left:0px;
-bottom: -450px;
+left:200px;
+bottom: -500px;
 }
 img.pos_left3
 {
 position:relative;
-left:260px;
-bottom: -450px;
+left:650px;
+bottom: -500px;
 }
 
 img.pos_left4
 {
 position:relative;
-left:450px;
+left:1120px;
 }
 img.pos_left5
 {
 position:relative;
-left:700px;
+left:1570px;
 }
 img.pos_left6
 {
 position:relative;
-left:280px;
-bottom: -450px;
+left:950px;
+bottom: -500px;
 }
 img.pos_left7
 {
 position:relative;
-left:550px;
-bottom: -450px;
+left:1400px;
+bottom: -500px;
 }
 
 </style>
 
 
 <script>
-var image = document.getElementById("aaa");
-var image1 = document.getElementById("bbb");
 
-var img_array=["images12.jpg","images12.jpg","images13.jpeg","images13.jpeg"];
-
-var index=0;
-function slide()
+function validateForm()
 {
+var x=document.forms["myForm"]["q"].value;
+if (x==null || x=="")
+  {
+  alert("Enter Person's id you want to search");
+  return false;
+  }
+if (x!=1 && x!=2 && x!=3 && x!=4 && x!=5)
+  {
+  alert("Person's id can be from 1 to 5 only");
+  return false;
+  }
 
-    document["aaa"].src = img_array[index];
-    document["bbb"].src = img_array[index];
-
-    if(index==0)
-    {
-      document["aaa"].style.left = -770;
-       document["aaa"].style.top = 100;
-      document["bbb"].style.left = -200;
-      document["bbb"].style.top = 100;
-        
-
-     }
-    else  if(index==1)
-   {  document["aaa"].style.left = -600;
-      document["aaa"].style.top = 100;
-      document["bbb"].style.left = -30;
-      document["bbb"].style.top = 100;
-      
-    }
-    else  if(index==2)
-   { document["aaa"].style.left = -770;
-        document["aaa"].style.top = 300;
-     document["bbb"].style.left = -200;
-      document["bbb"].style.top = 300;
-    }
-    else  if(index==3)
-   { document["aaa"].style.left = -600;
-        document["aaa"].style.top = 300;
-     document["bbb"].style.left = -30;
-      document["bbb"].style.top = 300;
-    }
-    index++;
-    if(index>=img_array.length)
-    {
-    index=0;
-    }
 }
-setInterval("slide()",50);
-
 </script>
-
+</head>
 <body>
+	<!-- HTML for SEARCH BAR -->
+	<div id="tfheader">
+		<form id="tfnewsearch"  name="myForm" action="abc.html"  onsubmit="return validateForm()" method="post">
+		        <input type="text" class="tftextinput" name="q" size="21" maxlength="120" ><input type="submit" value="search" class="tfbutton">
+		</form>
+	<div class="tfclear"></div>
+	</div>
 
-<img src="img4.jpg" alt="Person 1" width="90" height="140" class=pos_left>
-<img src="img5.jpg" alt="Person 1" width="90" height="120" class=pos_left1>
-<img src="img7.jpg" alt="Person 1" width="90" height="120" class=pos_left2>
-<img src="img6.jpg" alt="Person 1" width="90" height="120" class=pos_left3>
+<img src="img4.jpg" width="90" height="140" class=pos_left>
+<img src="img5.jpg" width="90" height="120" class=pos_left1>
+<img src="img7.jpg" width="90" height="120" class=pos_left2>
+<img src="img6.jpg" width="90" height="120" class=pos_left3>
 
 
-<img src="img4.jpg" alt="Person 1" width="90" height="140" class=pos_left4>
-<img src="img5.jpg" alt="Person 1" width="90" height="120" class=pos_left5>
-<img src="img7.jpg" alt="Person 1" width="90" height="120" class=pos_left6>
-<img src="img6.jpg" alt="Person 1" width="90" height="120" class=pos_left7>
-<img src="img11.jpg" alt="Person 1" width="120" height="90" class=pos_left8>
-<img src="img11.jpg" alt="Person 1" width="120" height="90" class=pos_left9>
+<img src="img4.jpg" width="90" height="140" class=pos_left4>
+<img src="img5.jpg" width="90" height="120" class=pos_left5>
+<img src="img7.jpg" width="90" height="120" class=pos_left6>
+<img src="img6.jpg" width="90" height="120" class=pos_left7>
+<img src="img11.jpg" width="120" height="90" class=pos_left8>
+<img src="img11.jpg" width="120" height="90" class=pos_left9>
+<img src="img11.jpg" width="120" height="90" class=pos_left10>
+<img src="img11.jpg" width="120" height="90" class=pos_left11>
 
-<img id="aaa" img src="images12.jpg"  width="120" height="90" class="pos_left9" name="image"/>
-<img id="bbb" img src="images12.jpg"  width="120" height="90" class="pos_left9" name="image"/>
-
+<img src="img5.jpg" width="90" height="140" class=pos_left12>
+<img src="img6.jpg" width="90" height="120" class=pos_left13>
+<img src="blkimage.png" width="90" height="120" class=pos_left14>
+<img src="images.jpeg" width="90" height="120" class=pos_left15>
+<img src="img3.jpg" width="90" height="120" class=pos_left16>
+<img src="img2.jpg" width="90" height="120" class=pos_left17>
+<img src="img17.jpeg" width="90" height="150" class=pos_left18>
+<img src="img18.jpeg" width="90" height="120" class=pos_left19>
+<img src="img19.jpeg" width="90" height="120" class=pos_left20>
 
 
 </body>
