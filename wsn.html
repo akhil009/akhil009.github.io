@@ -1,0 +1,45 @@
+<html>
+<head>
+<style>
+img.pos_left13
+{
+position:absolute;
+left:500px;
+bottom: 50px;
+}
+
+</style>
+<base href="file:////home/akhil/Desktop/AKHIL/wsnproject/akhil009.github.io/"/>
+
+<script>
+
+window.onload = function(){
+var image = document.getElementById("aaa");
+var img_array=["img2.jpg","images12.jpg","images13.jpeg","images13.jpeg"];
+var index=0;    
+var iframe = document.createElement('iframe');
+    iframe.id = 'iframe';
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+    iframe.src = 'out.txt';
+    setTimeout(function(){
+        var text = document.getElementById('iframe').contentDocument.body.firstChild.innerHTML;
+        alert(text);
+          if(text==20)
+          {
+                   alert("20");
+                   document["aaa"].src = img_array[index];
+                   document["aaa"].style.top = 500;
+                   document["aaa"].style.left = 300;
+      
+
+          }
+    }, 1000);
+}
+</script>
+</head>
+<body>
+<img id=aaa  src="blkimage.png" width="90" height="120" class=pos_left13>
+
+</body>
+</html>
